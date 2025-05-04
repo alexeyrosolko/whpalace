@@ -1,0 +1,23 @@
+services:
+  postgres:
+    container_name: postgres_whc_05_04_3
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=whuser
+      - POSTGRES_PASSWORD=whuserpassword
+      - POSTGRES_DB=wh
+    ports:
+      - "5432:5432"
+    restart: always
+    networks: [ 'whnet' ]
+  wh:
+    environment:
+      wh.datasource.local-url: "jdbc:postgresql://postgres:5432/wh"
+    container_name: backfront_whc_05_04_3
+    image: alexeyrosolko/whc:1.45
+    ports:
+      - "8085:8080"
+    depends_on:
+      - postgres
+    networks: [ 'whnet' ]
+networks: { whnet: { } }
