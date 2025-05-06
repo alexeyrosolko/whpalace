@@ -1,4 +1,4 @@
 git fetch --all
-git checkout main
+git merge all
 podman compose up
 podman compose start
