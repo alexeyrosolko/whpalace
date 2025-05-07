@@ -50,5 +50,6 @@ cat /Users/Aliaksei_Rasolka/wh/whpalace/build/compose.yaml > /Users/Aliaksei_Ras
 echo "docker_image_version="$docker_image_version > /Users/Aliaksei_Rasolka/wh/whpalace/start/.env
 echo "container_postfix="$container_postfix >> /Users/Aliaksei_Rasolka/wh/whpalace/start/.env
 
+echo "podman push alexeyrosolko/whc:1."$docker_image_version
 # Compose Up
-podman compose -f $work_dir/compose.yaml up
+#podman compose -f $work_dir/compose.yaml up
