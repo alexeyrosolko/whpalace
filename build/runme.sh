@@ -37,19 +37,22 @@ cp /Users/Aliaksei_Rasolka/wh/wh/build/libs/wh-0.0.1-SNAPSHOT.jar $work_dir
 echo "[+] Copy Jar to Docker work_directory "$work_dir
 
 # Build Docker
+echo "Build docker"
 cd $work_dir
 cp /Users/Aliaksei_Rasolka/wh/doc/2024/docker/2025-05-06/Dockerfile $work_dir
 cp /Users/Aliaksei_Rasolka/wh/doc/2024/docker/2025-05-06/compose.yaml $work_dir
 podman build -t whc $work_dir
 podman tag localhost/whc alexeyrosolko/whc:1.$docker_image_version
+podman push alexeyrosolko/whc:1.$docker_image_version
 
 #Prepare start
-mkdir /Users/Aliaksei_Rasolka/wh/whpalace/start
+echo "Prepare start"
+#mkdir /Users/Aliaksei_Rasolka/wh/whpalace/start
 cd /Users/Aliaksei_Rasolka/wh/whpalace/start
 cat /Users/Aliaksei_Rasolka/wh/whpalace/build/compose.yaml > /Users/Aliaksei_Rasolka/wh/whpalace/start/compose.yaml
 echo "docker_image_version="$docker_image_version > /Users/Aliaksei_Rasolka/wh/whpalace/start/.env
 echo "container_postfix="$container_postfix >> /Users/Aliaksei_Rasolka/wh/whpalace/start/.env
 
-echo "podman push alexeyrosolko/whc:1."$docker_image_version
+echo "podman push alexeyrosolko/whc:1."$docker_image_version > /Users/Aliaksei_Rasolka/wh/whpalace/build/image_push.sh
 # Compose Up
 #podman compose -f $work_dir/compose.yaml up
