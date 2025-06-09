@@ -1,3 +1,4 @@
+podman machine start
 
 # Create Directory Name YYYY_MM_DD_DOCKER_IMAGE_VERSION
 export docker_image_version=`cat docker_image_version`
