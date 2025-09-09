@@ -1,6 +1,6 @@
 services:
-  postgres:
-    container_name: "postgres_whc_${container_postfix}"
+  postgres2:
+    container_name: "postgres_whc_${container_postfix}2"
     image: postgres:latest
     environment:
       - POSTGRES_USER=whuser
@@ -9,14 +9,16 @@ services:
     ports:
       - "5432:5432"
     networks: [ 'whnet' ]
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
   wh:
     environment:
       wh.datasource.local-url: "jdbc:postgresql://postgres:5432/wh"
-    container_name: "backfront_whc_${container_postfix}"
+    container_name: "backfront_whc_${container_postfix}2"
     image: "alexeyrosolko/whc:1.${docker_image_version}"
     ports:
       - "8085:8080"
     depends_on:
-      - postgres
+      - postgres2
     networks: [ 'whnet' ]
 networks: { whnet: { } }

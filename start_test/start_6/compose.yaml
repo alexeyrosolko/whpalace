@@ -1,6 +1,6 @@
 services:
   postgres:
-    container_name: "postgres_whc_${container_postfix}"
+    container_name: "postgres_whc_${container_postfix}6"
     image: postgres:latest
     environment:
       - POSTGRES_USER=whuser
@@ -12,7 +12,7 @@ services:
   wh:
     environment:
       wh.datasource.local-url: "jdbc:postgresql://postgres:5432/wh"
-    container_name: "backfront_whc_${container_postfix}"
+    container_name: "backfront_whc_${container_postfix}6"
     image: "alexeyrosolko/whc:1.${docker_image_version}"
     ports:
       - "8085:8080"
