@@ -1,3 +1,5 @@
+export JAVA_HOME="/Users/Aliaksei_Rasolka/sdk/jdk-22.0.2.jdk/Contents/Home"
+
 podman machine start
 
 # Create Directory Name YYYY_MM_DD_DOCKER_IMAGE_VERSION
@@ -18,18 +20,25 @@ echo "work_dir: "$work_dir
 mkdir $work_dir
 
 #Build UI
+echo Build UI
 cd /Users/Aliaksei_Rasolka/wh/web/wh24ui
 echo "<div>"`date` Docker image: $docker_image_version"</div>" >> src/app/components/system/about/about.component.html
-/Users/Aliaksei_Rasolka/.nvm/versions/node/v22.7.0/bin/npm run build
+#/Users/Aliaksei_Rasolka/.nvm/versions/node/v22.7.0/bin/npm run build
+npm run build
 
 #Copy UI to Back
+echo Copy UI to Back
 rm -r /Users/Aliaksei_Rasolka/wh/wh/src/main/resources/static
 cp -R /Users/Aliaksei_Rasolka/wh/web/wh24ui/dist/wh24ui/browser /Users/Aliaksei_Rasolka/wh/wh/src/main/resources/static
 
 #Build Back
+echo Build Back
 cd /Users/Aliaksei_Rasolka/wh/wh
 
+echo "runnning ./gradlew clean"
 ./gradlew clean
+
+echo "runnning ./gradlew bootJar"
 ./gradlew bootJar
 
 # Copy Jar to Docker work_directory

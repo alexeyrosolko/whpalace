@@ -1,5 +1,5 @@
 services:
-  postgres:
+  postgres_09_09:
     container_name: "postgres_whc_${container_postfix}"
     image: postgres:latest
     environment:
@@ -17,6 +17,6 @@ services:
     ports:
       - "8085:8080"
     depends_on:
-      - postgres
+      - postgres_09_09
     networks: [ 'whnet' ]
 networks: { whnet: { } }
