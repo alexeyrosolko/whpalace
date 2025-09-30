@@ -1,5 +1,5 @@
 git fetch --all
 git merge --all
-docker compose down
+docker compose stop
 docker compose up
 docker compose start
