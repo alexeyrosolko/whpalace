@@ -24,7 +24,7 @@ echo Build UI
 cd /Users/Aliaksei_Rasolka/wh/web/wh24ui
 echo "<div>"`date` Docker image: $docker_image_version"</div>" >> src/app/components/system/about/about.component.html
 #/Users/Aliaksei_Rasolka/.nvm/versions/node/v22.7.0/bin/npm run build
-npm run build
+npm run build-docker wh24ui
 
 #Copy UI to Back
 echo Copy UI to Back
