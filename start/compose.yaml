@@ -1,11 +1,10 @@
 services:
   postgres:
-#    container_name: "postgres_whc_${container_postfix}"
-    container_name: "postgres_whc_69"
+    container_name: "postgres_whc_${container_postfix}"
     image: postgres:latest
     environment:
       - POSTGRES_USER=whuser
-      - POSTGRES_1PASSWORD=whuserpassword
+      - POSTGRES_PASSWORD=whuserpassword
       - POSTGRES_DB=wh
     ports:
       - "5432:5432"
