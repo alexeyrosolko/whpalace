@@ -27,6 +27,7 @@ echo "<div>"`date` Docker image: $docker_image_version"</div>" >> src/app/compon
 npm run build-docker wh24ui
 
 #Copy UI to Back
+#ToDo git pull !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 echo Copy UI to Back
 rm -r /Users/Aliaksei_Rasolka/wh/wh/src/main/resources/static
 cp -R /Users/Aliaksei_Rasolka/wh/web/wh24ui/dist/wh24ui/browser /Users/Aliaksei_Rasolka/wh/wh/src/main/resources/static
