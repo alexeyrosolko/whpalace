@@ -67,3 +67,8 @@ echo "container_postfix="$container_postfix >> /Users/Aliaksei_Rasolka/wh/whpala
 echo "podman push alexeyrosolko/whc:1."$docker_image_version > /Users/Aliaksei_Rasolka/wh/whpalace/build/image_push.sh
 # Compose Up
 #podman compose -f $work_dir/compose.yaml up
+
+cd /Users/Aliaksei_Rasolka/wh/whpalace
+git add --all
+git commit -m $docker_image_version
+git push origin main
