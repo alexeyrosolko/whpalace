@@ -42,7 +42,7 @@ echo "runnning ./gradlew clean"
 ./gradlew clean
 
 echo "runnning ./gradlew bootJar"
-./gradlew bootJar
+./gradlew app:bootJar
 
 # Copy Jar to Docker work_directory
 echo "Copy Jar to Docker work_directory "$work_dir
