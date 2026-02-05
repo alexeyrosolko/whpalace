@@ -46,7 +46,8 @@ echo "runnning ./gradlew bootJar"
 
 # Copy Jar to Docker work_directory
 echo "Copy Jar to Docker work_directory "$work_dir
-cp /Users/Aliaksei_Rasolka/wh/wh/build/libs/wh-0.0.1-SNAPSHOT.jar $work_dir
+#cp /Users/Aliaksei_Rasolka/wh/wh/build/libs/wh-0.0.1-SNAPSHOT.jar $work_dir
+cp /Users/Aliaksei_Rasolka/wh/wh/main/build/libs/wh-0.0.1-SNAPSHOT.jar $work_dir
 echo "[+] Copy Jar to Docker work_directory "$work_dir
 
 # Build Docker
