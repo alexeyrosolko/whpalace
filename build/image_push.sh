@@ -1,1 +1,1 @@
-podman push alexeyrosolko/whc:1.115
+podman push alexeyrosolko/whc:1.116
