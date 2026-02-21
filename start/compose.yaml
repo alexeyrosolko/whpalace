@@ -13,8 +13,10 @@ services:
   wh:
     environment:
       wh.datasource.local-url: "jdbc:postgresql://postgres:5432/wh"
-    container_name: "backfront_whc_${container_postfix}"
-    image: "alexeyrosolko/whc:1.${docker_image_version}"
+#    container_name: "backfront_whc_${container_postfix}"
+    container_name: "backfront_whc_136"
+#    image: "alexeyrosolko/whc:1.${docker_image_version}"
+    image: "alexeyrosolko/whc:latest"
     ports:
       - "8085:8080"
     depends_on:
