@@ -1,5 +1,5 @@
 git fetch --all
 git merge --all
-podman compose down
-podman compose up
-podman compose start
+docker compose down
+docker compose up -d --pull always wh
+docker compose start
